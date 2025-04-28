@@ -44,8 +44,8 @@ dnf5 install -y --setopt=install_weak_deps=False \
     NetworkManager-tui
 
 # Disable COPRs so they don't end up enabled on the final image:
-dnf5 -y copr disable solopasha/hyprland
-dnf5 -y copr disable erikreider/SwayNotificationCenter
+dnf5 -y copr disable hyprland
+dnf5 -y copr disable SwayNotificationCenter
 
 #### Example for enabling a System Unit File
 
