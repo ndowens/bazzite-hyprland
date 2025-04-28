@@ -28,12 +28,19 @@ dnf5 install -y tmux
 # dnf5 -y copr enable ublue-os/staging
 dnf5 copr enable solopasha/hyprland
 dnf5 copr enable erikreider/SwayNotificationCenter
-
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
     hyprland \
     swayidle \
     waybar \
+    wofi \
+    swaync \
+    wl-clipboard \
+    grim \
+    brightnessctl \
+    pavucontrol \
+    network-manager-applet \
+    clipman \
     nwg-drawer \
     wdisplays \
     pavucontrol \
