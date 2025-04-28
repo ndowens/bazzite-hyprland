@@ -28,9 +28,9 @@ dnf5 copr enable pgdev/ghostty
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
     hyprland \
-    hyprlock \
-    hypridle \
-    pyprland \
+    hyprland/hyprlock \
+    hyprland/hypridle \
+    hyprland/pyprland \
     waybar \
     wofi \
     swaync \
