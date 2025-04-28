@@ -30,7 +30,8 @@ dnf5 copr enable solopasha/hyprland
 dnf5 copr enable erikreider/SwayNotificationCenter
 dnf5 copr enable wezfurlong/wezterm-nightly
 
-dnf5 install -y --setopt=install_weak_deps=False \
+# dnf5 install -y --setopt=install_weak_deps=False \
+dnf5 install -y \
     xdg-desktop-portal-hyprland \
     hyprland \
     swayidle \
