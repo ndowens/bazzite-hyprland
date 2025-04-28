@@ -23,9 +23,12 @@ dnf5 install -y tmux
 # Use a COPR Example:
 # if using helper function above:
 # enable_copr solopasha/hyprland
-dnf5 -y copr enable ublue-os/staging
-dnf5 -y install solopasha/hyprland
+# dnf5 -y copr enable ublue-os/staging
+dnf5 copr enable solopasha/hyprland
+dnf5 -y install hyprland
+dnf5 copr enable erikreider/SwayNotificationCenter
 dnf5 -y install erikreider/SwayNotificationCenter
+
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
     hyprland \
@@ -41,7 +44,8 @@ dnf5 install -y --setopt=install_weak_deps=False \
     NetworkManager-tui
 
 # Disable COPRs so they don't end up enabled on the final image:
-dnf5 -y copr disable ublue-os/staging
+dnf5 -y copr disable solopasha/hyprland
+dnf5 -y copr disable erikreider/SwayNotificationCenter
 
 #### Example for enabling a System Unit File
 
