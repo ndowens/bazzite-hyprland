@@ -56,5 +56,7 @@ dnf5 install -y --setopt=install_weak_deps=False \
 
 #### Example for enabling a System Unit File
 
+echo "auth required pam_unix.so" >/etc/pam.d/hyprlock
+echo "auth include system-auth" >/etc/pam.d/hyprlock
 # systemctl enable podman.socket
 mkdir -p /nix/var/nix/gcroots/per-user/bazzite
