@@ -17,8 +17,6 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# for hyprland install
-mkdir -p /.gnupg
 # this installs a package from fedora repos
 dnf5 install -y tmux
 
@@ -28,10 +26,9 @@ dnf5 install -y tmux
 # dnf5 -y copr enable ublue-os/staging
 dnf5 copr enable solopasha/hyprland
 dnf5 copr enable erikreider/SwayNotificationCenter
-dnf5 copr enable wezfurlong/wezterm-nightly
+dnf copr enable wezfurlong/wezterm-nightly
 
-# dnf5 install -y --setopt=install_weak_deps=False \
-dnf5 install -y \
+dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
     hyprland \
     swayidle \
@@ -48,8 +45,9 @@ dnf5 install -y \
     wdisplays \
     pavucontrol \
     SwayNotificationCenter \
-    NetworkManager-tui \
-    wezterm
+    NetworkManager-tui
+
+dnf install -y wezterm
 
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable solopasha/hyprland
