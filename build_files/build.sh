@@ -23,6 +23,7 @@ enable_copr() {
 # dnf5 -y copr enable ublue-os/staging
 dnf5 copr enable solopasha/hyprland
 dnf5 copr enable erikreider/SwayNotificationCenter
+dnf5 copr enable pgdev/ghostty
 
 enable_copr wezfurlong/wezterm-nightly
 
@@ -45,7 +46,8 @@ dnf5 install -y --setopt=install_weak_deps=False \
     SwayNotificationCenter \
     NetworkManager-tui \
     tmux \
-    wezterm
+    wezterm \
+    ghostty
 
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable solopasha/hyprland
