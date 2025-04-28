@@ -30,9 +30,6 @@ dnf5 copr enable erikreider/SwayNotificationCenter
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
     hyprland \
-    hyprpaper \
-    hyprland-qtutils \
-    hyprpolkitagent \
     swayidle \
     waybar \
     nwg-drawer \
@@ -42,8 +39,8 @@ dnf5 install -y --setopt=install_weak_deps=False \
     NetworkManager-tui
 
 # Disable COPRs so they don't end up enabled on the final image:
-dnf5 -y copr disable hyprland
-dnf5 -y copr disable SwayNotificationCenter
+dnf5 -y copr disable solopasha/hyprland
+dnf5 -y copr disable erikreider/SwayNotificationCenter
 
 #### Example for enabling a System Unit File
 
