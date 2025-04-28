@@ -21,16 +21,16 @@ enable_copr() {
 # if using helper function above:
 # enable_copr solopasha/hyprland
 # dnf5 -y copr enable ublue-os/staging
-dnf5 copr enable solopasha/hyprland
+enable_copr solopasha/hyprland
 dnf5 copr enable erikreider/SwayNotificationCenter
 dnf5 copr enable pgdev/ghostty
 
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
     hyprland \
-    hyprland/hyprlock \
-    hyprland/hypridle \
-    hyprland/pyprland \
+    hyprlock \
+    hypridle \
+    pyprland \
     waybar \
     wofi \
     swaync \
