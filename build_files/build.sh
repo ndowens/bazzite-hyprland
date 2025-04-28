@@ -25,11 +25,12 @@ enable_copr solopasha/hyprland
 enable_copr erikreider/SwayNotificationCenter
 enable_copr pgdev/ghostty
 
-dnf5 install -y --setopt=install_weak_deps=False \
+dnf5 install -y \
     xdg-desktop-portal-hyprland \
     hyprland \
     hyprlock \
     hypridle \
+    hyprland-qtutils \
     pyprland \
     waybar \
     wofi \
@@ -49,8 +50,9 @@ dnf5 install -y --setopt=install_weak_deps=False \
     ghostty
 
 # Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable solopasha/hyprland
-# dnf5 -y copr disable erikreider/SwayNotificationCenter
+dnf5 -y copr disable solopasha/hyprland
+dnf5 -y copr disable erikreider/SwayNotificationCenter
+dnf5 -y copr disable pgdev/ghostty
 
 #### Example for enabling a System Unit File
 
