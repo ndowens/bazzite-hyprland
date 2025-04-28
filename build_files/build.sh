@@ -28,7 +28,7 @@ dnf5 install -y tmux
 # dnf5 -y copr enable ublue-os/staging
 dnf5 copr enable solopasha/hyprland
 dnf5 copr enable erikreider/SwayNotificationCenter
-dnf5 copr enable scratchostewart/wezterm-nightly
+dnf5 copr enable wezfurlong/wezterm-nightly
 
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
