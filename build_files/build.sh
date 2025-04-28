@@ -25,9 +25,7 @@ dnf5 install -y tmux
 # enable_copr solopasha/hyprland
 # dnf5 -y copr enable ublue-os/staging
 dnf5 copr enable solopasha/hyprland
-dnf5 -y install hyprland
 dnf5 copr enable erikreider/SwayNotificationCenter
-dnf5 -y install erikreider/SwayNotificationCenter
 
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
