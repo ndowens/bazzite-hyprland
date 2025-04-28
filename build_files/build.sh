@@ -48,7 +48,7 @@ dnf5 install -y --setopt=install_weak_deps=False \
     pavucontrol \
     SwayNotificationCenter \
     NetworkManager-tui \
-    wezterm-nightly
+    wezterm
 
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable solopasha/hyprland
