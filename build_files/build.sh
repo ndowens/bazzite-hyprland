@@ -1,7 +1,15 @@
 #!/bin/bash
 
+# RELEASE="$(rpm -E %fedora)"
 set -ouex pipefail
 
+# enable_copr() {
+#     repo="$1"
+#     repo_with_dash="${repo/\//-}"
+#     wget "https://copr.fedorainfracloud.org/coprs/${repo}/repo/fedora-${RELEASE}/${repo_with_dash}-fedora-${RELEASE}.repo" \
+#         -O "/etc/yum.repos.d/_copr_${repo_with_dash}.repo"
+# }
+#
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -13,11 +21,27 @@ set -ouex pipefail
 dnf5 install -y tmux
 
 # Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
+# if using helper function above:
+# enable_copr solopasha/hyprland
+dnf5 -y copr enable ublue-os/staging
+dnf5 -y install solopasha/hyprland
+dnf5 -y install erikreider/SwayNotificationCenter
+dnf5 install -y --setopt=install_weak_deps=False \
+    xdg-desktop-portal-hyprland \
+    hyprland \
+    hyprpaper \
+    hyprland-qtutils \
+    hyprpolkitagent \
+    swayidle \
+    waybar \
+    nwg-drawer \
+    wdisplays \
+    pavucontrol \
+    SwayNotificationCenter \
+    NetworkManager-tui
+
 # Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+dnf5 -y copr disable ublue-os/staging
 
 #### Example for enabling a System Unit File
 
