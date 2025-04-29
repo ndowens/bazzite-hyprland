@@ -9,7 +9,13 @@ enable_copr() {
     wget "https://copr.fedorainfracloud.org/coprs/${repo}/repo/fedora-${RELEASE}/${repo_with_dash}-fedora-${RELEASE}.repo" \
         -O "/etc/yum.repos.d/_copr_${repo_with_dash}.repo"
 }
-#
+
+# https://support.1password.com/install-linux/#fedora-or-red-hat-enterprise-linux
+get_1_password() {
+    rpm --import https://downloads.1password.com/linux/keys/1password.asc
+    sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https://downloads.1password.com/linux/rpm/stable/\$basearch\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=\"https://downloads.1password.com/linux/keys/1password.asc\"" > /etc/yum.repos.d/1password.repo'
+}
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -17,10 +23,6 @@ enable_copr() {
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# Use a COPR Example:
-# if using helper function above:
-# enable_copr solopasha/hyprland
-# dnf5 -y copr enable ublue-os/staging
 enable_copr solopasha/hyprland
 enable_copr erikreider/SwayNotificationCenter
 enable_copr pgdev/ghostty
@@ -47,7 +49,8 @@ dnf5 install -y --setopt=install_weak_deps=False \
     SwayNotificationCenter \
     NetworkManager-tui \
     tmux \
-    ghostty
+    ghostty \
+    1password
 
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable solopasha/hyprland
@@ -56,7 +59,8 @@ dnf5 install -y --setopt=install_weak_deps=False \
 
 #### Example for enabling a System Unit File
 
-echo "auth required pam_unix.so" >/etc/pam.d/hyprlock
-echo "auth include system-auth" >/etc/pam.d/hyprlock
+# experimenting to get hyprlock to work
+# echo "auth required pam_unix.so" >/etc/pam.d/hyprlock
+# echo "auth include system-auth" >/etc/pam.d/hyprlock
 # systemctl enable podman.socket
 mkdir -p /nix/var/nix/gcroots/per-user/bazzite
