@@ -26,6 +26,7 @@ get_1_password() {
 enable_copr solopasha/hyprland
 enable_copr erikreider/SwayNotificationCenter
 enable_copr pgdev/ghostty
+get_1_password
 
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
