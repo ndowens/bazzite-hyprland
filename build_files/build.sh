@@ -51,7 +51,8 @@ dnf5 install -y --setopt=install_weak_deps=False \
     SwayNotificationCenter \
     NetworkManager-tui \
     tmux \
-    ghostty
+    ghostty \
+    blueman
 
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable solopasha/hyprland
