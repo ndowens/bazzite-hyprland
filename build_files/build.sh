@@ -8,6 +8,7 @@ enable_copr() {
     repo_with_dash="${repo/\//-}"
     wget "https://copr.fedorainfracloud.org/coprs/${repo}/repo/fedora-${RELEASE}/${repo_with_dash}-fedora-${RELEASE}.repo" \
         -O "/etc/yum.repos.d/_copr_${repo_with_dash}.repo"
+    mkdir /opt/1Password/
 }
 
 # https://support.1password.com/install-linux/#fedora-or-red-hat-enterprise-linux
