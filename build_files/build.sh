@@ -8,14 +8,14 @@ enable_copr() {
     repo_with_dash="${repo/\//-}"
     wget "https://copr.fedorainfracloud.org/coprs/${repo}/repo/fedora-${RELEASE}/${repo_with_dash}-fedora-${RELEASE}.repo" \
         -O "/etc/yum.repos.d/_copr_${repo_with_dash}.repo"
-    mkdir /opt/1Password
 }
 
-# https://support.1password.com/install-linux/#fedora-or-red-hat-enterprise-linux
-get_1_password() {
-    rpm --import https://downloads.1password.com/linux/keys/1password.asc
-    sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https://downloads.1password.com/linux/rpm/stable/\$basearch\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=\"https://downloads.1password.com/linux/keys/1password.asc\"" > /etc/yum.repos.d/1password.repo'
-}
+# # https://support.1password.com/install-linux/#fedora-or-red-hat-enterprise-linux
+# get_1_password() {
+#     rpm --import https://downloads.1password.com/linux/keys/1password.asc
+#     sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https://downloads.1password.com/linux/rpm/stable/\$basearch\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=\"https://downloads.1password.com/linux/keys/1password.asc\"" > /etc/yum.repos.d/1password.repo'
+#     mkdir /opt/1Password
+# }
 
 ### Install packages
 
@@ -27,7 +27,6 @@ get_1_password() {
 enable_copr solopasha/hyprland
 enable_copr erikreider/SwayNotificationCenter
 enable_copr pgdev/ghostty
-get_1_password
 
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
@@ -38,6 +37,7 @@ dnf5 install -y --setopt=install_weak_deps=False \
     pyprland \
     waybar \
     wofi \
+    rofi \
     swaync \
     wl-clipboard \
     grim \
@@ -51,8 +51,7 @@ dnf5 install -y --setopt=install_weak_deps=False \
     SwayNotificationCenter \
     NetworkManager-tui \
     tmux \
-    ghostty \
-    1password
+    ghostty
 
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable solopasha/hyprland
