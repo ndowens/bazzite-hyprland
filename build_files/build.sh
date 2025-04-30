@@ -33,7 +33,14 @@ dnf5 install -y --setopt=install_weak_deps=False \
     hyprland \
     hyprlock \
     hypridle \
+    hyprpicker \
+    hyprsysteminfo \
+    hyprsunset \
+    hyprpaper \
+    hyprcursor \
+    hyprpolkitagent \
     hyprland-qtutils \
+    hyprland-qt-support \
     pyprland \
     waybar \
     wofi \
