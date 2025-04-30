@@ -59,7 +59,9 @@ dnf5 install -y --setopt=install_weak_deps=False \
     NetworkManager-tui \
     tmux \
     ghostty \
-    blueman
+    blueman \
+    qt5-qtwayland \
+    qt6-qtwayland
 
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable solopasha/hyprland
