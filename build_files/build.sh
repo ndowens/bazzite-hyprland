@@ -42,7 +42,6 @@ dnf5 install -y --setopt=install_weak_deps=False \
     hyprland-qtutils \
     hyprland-qt-support \
     pyprland \
-    waybar \
     wofi \
     rofi \
     swaync \
@@ -59,7 +58,6 @@ dnf5 install -y --setopt=install_weak_deps=False \
     NetworkManager-tui \
     tmux \
     ghostty \
-    blueman \
     qt5-qtwayland \
     qt6-qtwayland
 
