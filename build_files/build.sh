@@ -26,8 +26,10 @@ enable_copr() {
 
 enable_copr solopasha/hyprland
 enable_copr erikreider/SwayNotificationCenter
-# enable_copr pgdev/ghostty
+enable_copr pgdev/ghostty
 enable_copr wezfurlong/wezterm-nightly
+
+dnf5 remove -y fish
 
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
