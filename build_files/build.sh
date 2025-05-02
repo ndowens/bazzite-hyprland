@@ -29,6 +29,7 @@ enable_copr erikreider/SwayNotificationCenter
 enable_copr pgdev/ghostty
 enable_copr wezfurlong/wezterm-nightly
 
+# ncurses-term dependency is in conflict with ghostty so I'm getting rid of fish here
 dnf5 remove -y fish
 
 dnf5 install -y --setopt=install_weak_deps=False \
@@ -64,6 +65,7 @@ dnf5 install -y --setopt=install_weak_deps=False \
     SwayNotificationCenter \
     NetworkManager-tui \
     tmux \
+    ghostty \
     wezterm \
     blueman \
     qt5-qtwayland \
