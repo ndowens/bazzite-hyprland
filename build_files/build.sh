@@ -26,7 +26,7 @@ enable_copr() {
 
 enable_copr solopasha/hyprland
 enable_copr erikreider/SwayNotificationCenter
-enable_copr pgdev/ghostty
+# enable_copr pgdev/ghostty
 enable_copr wezfurlong/wezterm-nightly
 
 dnf5 install -y --setopt=install_weak_deps=False \
@@ -62,7 +62,6 @@ dnf5 install -y --setopt=install_weak_deps=False \
     SwayNotificationCenter \
     NetworkManager-tui \
     tmux \
-    ghostty \
     wezterm \
     blueman \
     qt5-qtwayland \
