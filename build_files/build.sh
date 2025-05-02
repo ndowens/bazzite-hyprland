@@ -27,6 +27,7 @@ enable_copr() {
 enable_copr solopasha/hyprland
 enable_copr erikreider/SwayNotificationCenter
 enable_copr pgdev/ghostty
+enable_copr wezfurlong/wezterm-nightly
 
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
@@ -38,9 +39,12 @@ dnf5 install -y --setopt=install_weak_deps=False \
     hyprsunset \
     hyprpaper \
     hyprcursor \
+    hyprgraphics \
     hyprpolkitagent \
     hyprland-qtutils \
     hyprland-qt-support \
+    hyprland-uwsm \
+    uwsm \
     pyprland \
     waybar \
     wofi \
@@ -59,6 +63,7 @@ dnf5 install -y --setopt=install_weak_deps=False \
     NetworkManager-tui \
     tmux \
     ghostty \
+    wezterm \
     blueman \
     qt5-qtwayland \
     qt6-qtwayland
