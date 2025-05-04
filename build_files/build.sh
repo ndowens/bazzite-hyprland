@@ -69,7 +69,8 @@ dnf5 install -y --setopt=install_weak_deps=False \
     wezterm \
     blueman \
     qt5-qtwayland \
-    qt6-qtwayland
+    qt6-qtwayland \
+    sddm
 
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable solopasha/hyprland
@@ -81,5 +82,8 @@ dnf5 install -y --setopt=install_weak_deps=False \
 # experimenting to get hyprlock to work
 # echo "auth required pam_unix.so" >/etc/pam.d/hyprlock
 # echo "auth include system-auth" >/etc/pam.d/hyprlock
-# systemctl enable podman.socket
+systemctl enable podman.socket
+systemctl disable gdm
+systemctl enable sddm
+
 mkdir -p /nix/var/nix/gcroots/per-user/bazzite
