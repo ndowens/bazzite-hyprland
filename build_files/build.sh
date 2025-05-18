@@ -30,7 +30,6 @@ enable_copr pgdev/ghostty
 enable_copr wezfurlong/wezterm-nightly
 
 # ncurses-term dependency is in conflict with ghostty so I'm getting rid of fish here
-dnf5 remove -y fish
 
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
@@ -63,14 +62,17 @@ dnf5 install -y --setopt=install_weak_deps=False \
     wdisplays \
     pavucontrol \
     SwayNotificationCenter \
-    NetworkManager-tui \
-    tmux \
-    ghostty \
     wezterm \
     blueman \
     qt5-qtwayland \
     qt6-qtwayland \
-    sddm
+    gdm \
+    tailscale \
+    steam \
+    wow32-wine \
+    wow64-wine \
+    mosh \
+    firefox
 
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable solopasha/hyprland
@@ -83,7 +85,4 @@ dnf5 install -y --setopt=install_weak_deps=False \
 # echo "auth required pam_unix.so" >/etc/pam.d/hyprlock
 # echo "auth include system-auth" >/etc/pam.d/hyprlock
 systemctl enable podman.socket
-systemctl disable gdm
-systemctl enable sddm
-
-mkdir -p /nix/var/nix/gcroots/per-user/bazzite
+systemctl enable gdm
