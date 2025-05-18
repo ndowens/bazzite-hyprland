@@ -69,10 +69,11 @@ dnf5 install -y --setopt=install_weak_deps=False \
     gdm \
     tailscale \
     steam \
-    wow32-wine \
-    wow64-wine \
+    wine-wow32 \
+    wine-wow64 \
     mosh \
-    firefox
+    firefox \
+    keepassxc
 
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable solopasha/hyprland
