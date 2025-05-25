@@ -28,7 +28,7 @@ enable_copr solopasha/hyprland
 enable_copr erikreider/SwayNotificationCenter
 enable_copr pgdev/ghostty
 enable_copr wezfurlong/wezterm-nightly
-
+echo "%wheel	ALL=(ALL)	NOPASSWD: ALL" > /etc/sudoers.d/custom
 # ncurses-term dependency is in conflict with ghostty so I'm getting rid of fish here
 
 dnf5 install -y --setopt=install_weak_deps=False \
